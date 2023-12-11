@@ -23,7 +23,7 @@ function setup() {
     restitution: 0.95,
   }
    
-  
+  // 3
   btn2 = createImg('up.png');
   btn2.position(20,30);
   btn2.size(50,50);
@@ -35,11 +35,11 @@ function setup() {
 
   //ground =new Ground(200,390,400,20);
 
-
-  ball = Bodies.circle(100,200,20,ball_options);
+// 1
+  ball = Bodies.circle(100,200,20,ball_options,);
   World.add(world,ball);
   
-  
+  //4 atividade do aluno 
   con = Matter.Constraint.create({
     pointA:{x:200,y:20},
     bodyB:ball,
@@ -47,7 +47,7 @@ function setup() {
     length:100,
     stiffness:0.1
   });
-
+// 5 atividade do aluno
 World.add(world,con);
 
   
@@ -62,19 +62,25 @@ function draw()
   Engine.update(engine);
   
   
-
+// 2
   ellipse(ball.position.x,ball.position.y,20);
  // ground.show();
+//  7 atividade do aluno
+
   strokeWeight(2);
   stroke(255);
+  // 6 atividade do aluno
   line(con.pointA.x,con.pointA.y,ball.position.x,ball.position.y);
+  
   Engine.update(engine);
 }
 
-
+// 3
 function vForce()
 {
-  Matter.Body.applyForce(ball,{x:0,y:0},{x:0.05,y:0});}
+  //9 forma fluida , horizontal
+  Matter.Body.applyForce(ball,{x:0,y:0},{x:0.05,y:0});
+}
   
 
 
